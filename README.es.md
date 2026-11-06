@@ -1,3 +1,29 @@
+# WeLoveReviews — Análisis de sentimiento
+
+El análisis narrativo se entrega en `src/explore.ipynb`. El script `src/app.py` procesa las 500 reseñas originales y genera `data/processed/reviews_with_sentiment.csv`, sin base de datos ni entrenamiento.
+
+## Ejecutar
+
+Entorno verificado: Python 3.13.5, CPU, macOS arm64. Las dependencias directas y transitivas están fijadas en `requirements.txt`; no se ha probado todavía Codespaces.
+
+```bash
+python3.13 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python src/app.py
+python -m unittest discover -s tests
+```
+
+Abra `src/explore.ipynb` en VS Code y seleccione el intérprete de `.venv` para ejecutar todas las celdas. La primera inferencia descarga automáticamente el modelo obligatorio a la caché Hugging Face, fuera del repositorio. `HF_HOME` permite seleccionar otra caché externa; `HF_HUB_OFFLINE=1` permite repetir cuando esté completa. No se versionan pesos.
+
+Modelo fijado: `nlptown/bert-base-multilingual-uncased-sentiment`, revisión `8f6f4e3a8f70be4b65d3a4a8762b6d781cda240d`. Bandas: 1–2 `Negative`, 3 `Neutral`, 4–5 `Positive`. Cada fila conserva los datos originales y registra predicción o un estado de error explícito. La salida parcial devuelve código distinto de cero.
+
+La revisión humana de 18 textos está completada en `data/interim/manual_review.csv`: incluye `manual_sentiment`, `reason`, `reviewer` y `reviewed_at` del revisor. El notebook vuelve a leer esas anotaciones sin sobrescribirlas; los errores textuales no se consideran confirmados hasta esta revisión. No introducir anotaciones inventadas ni interpretar `rating` como verdad del sentimiento textual.
+
+La especificación y el seguimiento SDD están en `memory-bank/specs/welovereviews-sentiment-analysis/`.
+
+---
+
 # Plantilla de Proyecto de Ciencia de Datos
 
 Esta plantilla está diseñada para impulsar proyectos de ciencia de datos proporcionando una configuración básica para conexiones de base de datos, procesamiento de datos, y desarrollo de modelos de aprendizaje automático. Incluye una organización estructurada de carpetas para tus conjuntos de datos y un conjunto de paquetes de Python predefinidos necesarios para la mayoría de las tareas de ciencia de datos.

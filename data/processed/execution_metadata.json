@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-06",
+  "python": "3.13.5",
+  "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
+  "model": "nlptown/bert-base-multilingual-uncased-sentiment",
+  "revision": "8f6f4e3a8f70be4b65d3a4a8762b6d781cda240d",
+  "input_sha256": "63439a1a8c48fe8cc479b0b621b151b8da2415c58522b1e6b111582eef6edf10",
+  "output_sha256": "cbd41ca33ee41fe9177c7d89dd659270aa694855906a57aec39ba11ed1dc9551",
+  "device": "cpu",
+  "batch_size": 8,
+  "max_length": 512,
+  "rows": 500,
+  "failed": 0,
+  "counts": {
+    "Positive": 412,
+    "Negative": 47,
+    "Neutral": 41
+  },
+  "predicted_mean": 4.398,
+  "human_mean": 4.5,
+  "candidate_false_negatives": 16,
+  "unit_tests_passed": 10,
+  "pip_check": "passed",
+  "manual_review": "completed",
+  "versions": {
+    "pandas": "3.1.1",
+    "numpy": "2.5.4",
+    "torch": "2.15.0",
+    "transformers": "5.22.2",
+    "nbformat": "5.11.1",
+    "nbconvert": "7.17.2"
+  },
+  "notebook_code_cells_executed": 15,
+  "notebook_errors": 0,
+  "plots_visually_checked": 3,
+  "notebook_production_predictions_equal": true,
+  "batch_1_8_classes_equal": true,
+  "offline_execution_from_other_directory": "passed",
+  "truncated": 0,
+  "manual_review_count": 18,
+  "manual_review_sample_size": 18,
+  "manual_review_sha256": "c08f2bebcf4afb2f69cf313c9426a50b9943a2b36965776cb243f0000833483f",
+  "manual_reviewers": [
+    "ark"
+  ],
+  "manual_review_dates": [
+    "2026-11-06"
+  ],
+  "manual_sample_agreements": 13,
+  "manual_sample_disagreements": 5,
+  "confirmed_textual_false_negative_ids": [
+    15,
+    254,
+    489
+  ],
+  "validation_limit": "Muestra dirigida; no extrapolar precisión poblacional. Casos mixtos 321/322 con ponderación discutible."
+}
